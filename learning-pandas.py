@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('https://github.com/datasciencedojo/datasets/blob/master/titanic.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
 
-type(df)
 
+print(df.loc[[5, 10, 15], ['Name', 'Age']].tail(1))
