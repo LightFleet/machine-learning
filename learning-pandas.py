@@ -30,6 +30,10 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 ### СОРТИРОВКА
 
 # Первые 10 записей отсортированные по возрасту
-print(df.sort_values('Age').head(10))
+# print(df.sort_values('Age').head(10))
+
+# Первые 10 записей отсортированные по убыванию возраста и по имени в алфавитном порядке
+print(df.sort_values(['Age', 'Name'], ascending=[False, True]).head(10))
+
 
 
