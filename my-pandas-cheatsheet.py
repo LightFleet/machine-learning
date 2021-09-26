@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib
 
 df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
 
@@ -64,4 +65,19 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 # print(df.groupby('Sex')['Age'].describe())
 
 # Можно и круче -> группируем по полу и по тому выжил человек или нет и считаем, например, медиану по возрасту
-print(df.groupby(['Sex', 'Survived'])['Age'].agg('mean', 'median'))
+# print(df.groupby(['Sex', 'Survived'])['Age'].agg('mean', 'median'))
+
+# -- Считаем кол-во элементов каждой группы --
+# print(df['Sex'].value_counts())
+# тоже самое
+# df.groupby('Sex')['Sex'].count()
+
+# -- Функция корреляции (попарные корелляции - насколько данные зависят друг от друга) --
+# df.corr()
+
+# --- ВИЗУАЛИЗАЦИЯ ДАННЫХ ---
+matplotlib.get_backend()
+
+df['Age'].plot(kind='kde')
+
+matplotlib.pyplot.show()
