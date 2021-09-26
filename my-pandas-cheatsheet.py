@@ -56,4 +56,12 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 # print(df['Age'].describe())
 
 # -- Группируем --
-# in next releases (49.99$)
+
+# Средний возвраст мужчин и женщин среди пассажиров Титаника
+# print(df.groupby('Sex')['Age'].mean())
+
+# Через describe (многа статистики йеей)
+# print(df.groupby('Sex')['Age'].describe())
+
+# Можно и круче -> группируем по полу и по тому выжил человек или нет и считаем, например, медиану по возрасту
+print(df.groupby(['Sex', 'Survived'])['Age'].agg('mean', 'median'))
