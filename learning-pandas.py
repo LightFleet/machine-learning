@@ -5,4 +5,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 
 #print(df.loc[[5, 10, 15], ['Name', 'Age']].tail(1))
 
-print(df.iloc[[5, 10, 15], [0, 9]])
+#print(df.iloc[[5, 10, 15], [0, 9]])
+
+print(df.iloc[5:24, :3])
