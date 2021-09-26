@@ -14,3 +14,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 # df['Age'] > 18 - объект типа Series (true/false проставил) который передали в df и получили выборку по маске!
 # print(df[df['Age'] > 18])
 
+# Все пассажиры 5-10-15 лет
+print(df[df['Age'].isin([5, 10, 15])])
+
