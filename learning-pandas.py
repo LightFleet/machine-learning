@@ -18,9 +18,18 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 # print(df[df['Age'].isin([5, 10, 15])])
 
 # Возвращает маску (карту) где проверяет есть ли элемент на этом месте
-print(df['Age'].notna())
+# print(df['Age'].notna())
 
 # Ну типа наоборот, но тут ещё и пропуск
 # Тоесть тут кол-во пассажиров Титаника возраст которых неизвестен
-print(df['Age'].isna().sum())
+# print(df['Age'].isna().sum())
+
+# Имена всех людей для которых известен возраст
+# print(df.loc[df['Age'].notna(), 'Name'])
+
+### СОРТИРОВКА
+
+# Первые 10 записей отсортированные по возрасту
+print(df.sort_values('Age').head(10))
+
 
