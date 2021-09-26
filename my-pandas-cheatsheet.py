@@ -76,8 +76,12 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 # df.corr()
 
 # --- ВИЗУАЛИЗАЦИЯ ДАННЫХ ---
-matplotlib.get_backend()
 
-df['Age'].plot(kind='kde')
+# Простенькая визуализация в виде гистограммки или графика
+# df['Age'].plot(kind='hist')
+# df['Age'].plot(kind='kde')
+
+# График посложнее, поставили масштабы и включили легенду
+df.groupby(['Sex'])['Age'].plot(kind='kde', xlim=[0, 100], legend=True)
 
 matplotlib.pyplot.show()
