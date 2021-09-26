@@ -15,5 +15,12 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/mas
 # print(df[df['Age'] > 18])
 
 # Все пассажиры 5-10-15 лет
-print(df[df['Age'].isin([5, 10, 15])])
+# print(df[df['Age'].isin([5, 10, 15])])
+
+# Возвращает маску (карту) где проверяет есть ли элемент на этом месте
+print(df['Age'].notna())
+
+# Ну типа наоборот, но тут ещё и пропуск
+# Тоесть тут кол-во пассажиров Титаника возраст которых неизвестен
+print(df['Age'].isna().sum())
 
